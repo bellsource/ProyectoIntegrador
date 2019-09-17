@@ -15,6 +15,10 @@ a{
 	text-decoration: none;
 }
 
+.banner {
+  width: 100%
+}
+
 
 main{
   margin:5px;
@@ -49,7 +53,7 @@ main div p {
 }
 
 .logo {
-  margin-top: 20px;
+  margin-top: 0.2%;
 }
 
 .button {
@@ -107,6 +111,14 @@ div input{
   width: 100%;
 }
 
+/*PREGUNTAS FRECUENTES*/
+
+.alert {
+  margin-top: 1.2%;
+  background-color: #dde0e5;
+  border: none;
+}
+
 /*FOOTTER*/
 
 section .container {
@@ -128,6 +140,14 @@ align-items: center;
 overflow: hidden;
 }
 
+.carrito {
+  width: 2%;
+  margin-right: 5%
+}
+
+.form-inline {
+  margin-right: 10%
+}
 
 div .img-container img {
 	width: 15%;
