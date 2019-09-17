@@ -17,10 +17,10 @@ a{
 
 
 main{
-  margin-top: 20px;
-	width: 80%;
+  margin:5px;
+	width: 100%;
 	overflow: hidden;
-	margin-left: 130px;
+
 	float: left;
 }
 main div{
@@ -32,28 +32,24 @@ main div{
 main div img{
   display: inline-block;
   float: left;
-}
-main div h2{
-  margin-left: 25%;
-}
-main div p {
-  margin-left: 25%;
-	justify-content: justify;
-  font-size: 14px;
-	font-family: sans-serif;
-	margin-right: 10px;
+  margin: 0px 20px;
 }
 
-.fondoBlanco{
-	background-color: white;
-	}
+main div h2{
+  padding-left: 201px;
+
+}
+main div p {
+
+  text-align: justify;
+  font-size: 14px;
+	font-family: 'Barlow',sans-serif;
+	margin-right: 10px;
+  padding-left: 201px;
+}
 
 .logo {
   margin-top: 20px;
-}
-
-.carrito {
-  width: 1px;
 }
 
 .button {
@@ -111,7 +107,7 @@ div input{
   width: 100%;
 }
 
-//FOOTTER//
+/*FOOTTER*/
 
 section .container {
  margin: 0 auto;
@@ -140,3 +136,29 @@ div .img-container img {
 	float: left;
   margin-left: 20%;
 }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+    main div p {
+
+      text-align: justify;
+      width: 100%;
+    	font-family:'Barlow', sans-serif;
+    	margin:5px;
+      padding: 0px;
+      font-size: 16px;
+    }
+      main div h2{
+        text-align: justify;
+        width: 100%;
+      	font-family:'Barlow', sans-serif;
+      	margin:5px;
+        padding: 0px;
+        font-size: 22px;
+      }
+      body div img{
+        width: 30%;
+        margin:5px;
+        padding: 0px;
+      }
+  }
