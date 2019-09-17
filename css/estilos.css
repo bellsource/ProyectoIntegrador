@@ -1,6 +1,6 @@
 body {
  font-family: 'Barlow', sans-serif;
- background-color: #e8da67;
+ background-color: white;
  border-color: none;
 }
 
@@ -9,19 +9,6 @@ body {
 	box-sizing: border-box;
 }
 
-
-header{
-	background-color: #e8da67;
-}
-
-header img .img-thumbnail{
-	width: 5%;
-	border: 0px;
-}
-
-header form button .btn {
-	border-color: black;
-}
 
 a{
 	margin: 5px 10px;
@@ -61,6 +48,13 @@ main div p {
 	background-color: white;
 	}
 
+.logo {
+  margin-top: 20px;
+}
+
+.carrito {
+  width: 1px;
+}
 
 .button {
   background-color: red;
@@ -113,21 +107,26 @@ div input{
  width: 100%;
 }
 
+.alert {
+  width: 100%;
+}
+
 //FOOTTER//
 
 section .container {
  margin: 0 auto;
  padding: 30px 0;
-
+ margin-left: 10px;
 }
 
 section div p span {
 	text-align: center;
-
+  margin-left: 10%;
+  margin-top: 10%;
 }
 
 .site-shopping-info {
-background-color: #eec82d;
+background-color: white;
 margin-top: 36px;
 align-items: center;
 overflow: hidden;
@@ -137,6 +136,7 @@ overflow: hidden;
 div .img-container img {
 	width: 15%;
 	align-items: center;
-	background-color: #eec82d;
+	background-color: white;
 	float: left;
+  margin-left: 20%;
 }
