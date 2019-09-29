@@ -13,3 +13,8 @@ Amarillo 3: button
 Rojo : 
 
 #a51d1a
+
+Fondo del video:
+
+#DDDDDD
+

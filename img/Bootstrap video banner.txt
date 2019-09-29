@@ -1,0 +1,39 @@
+<div class="embed-responsive
+embed-responsive-16by9">
+ <iframe class="embed-responsive-
+item" src="img/Video Banner"></iframe>
+</div>
+
+
+
+https://lenguajehtml.com/p/html/multimedia/etiquetas-html-de-video
+
+
+
+<video src="video.mp4" autoplay muted loop></video>
+<video width="640" height="480">
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  <source src="video.ogv" type="video/ogg">
+  <img src="imagen.png" alt="Video no soportado">
+  Su navegador no soporta contenido multimedia.
+</video>
+
+
+https://www.ionos.es/digitalguide/paginas-web/creacion-de-paginas-web/consejos-para-insertar-un-video-en-html-en-tu-web/
+
+
+<video width=320  height=240 controls poster="vistaprevia.jpg">
+    <source src="ejemplo.webm" type="video/webm">
+        <source src="ejemplo.ogg"  type="video/ogg">
+            <source src="ejemplo.mp4" type="video/mp4">
+              </video>
+
+
+      <video src="Video/Video%20Banner.mp4" autoplay muted loop></video>
+<video width=960  height=540 controls poster="vistaprevia.jpg">
+    <source src="Video/Video%20Banner.webm" type="video/webm">
+        <source src="Video/Video%20Banner.ogg"  type="video/ogg">
+            <source src="Video/Video%20Banner.mp4" type="video/mp4">
+              </video>
+      
