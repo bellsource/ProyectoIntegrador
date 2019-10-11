@@ -13,8 +13,8 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-12">
-    <a class="logo col-md-2 col-lg-1" href="index.php">
-    <div class="logo col-md-2 col-lg-1">
+    <a class="conteiner fluid" href="index.php">
+    <div class="logo col-xs-12 col-sm-12 col-md-2 col-lg-1">
       <img src="img/Logo.png" width="80%">
     </div>
     </a>
