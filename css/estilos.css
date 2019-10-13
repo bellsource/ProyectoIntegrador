@@ -1,185 +1,184 @@
 body {
- font-family: 'Barlow', sans-serif;
- background-color: #DDDDDD;
- border-color: none;
-}
-
-
-* {
-	box-sizing: border-box;
-}
-
-
-a{
-	margin: 5px 10px;
-	text-decoration: none;
-}
-
-.banner {
-  width: 100%
-}
-
-
-main{
-  margin:5px;
-	width: 100%;
-	overflow: hidden;
-
-	float: left;
-}
-main div{
-	width: 47%;
-	margin:20px 10px;
-	padding: 10px;
-	float: left;
-}
-main div img{
-  display: inline-block;
-  float: left;
-  margin: 0px 20px;
-}
-
-main div h2{
-  padding-left: 201px;
-
-}
-main div p {
-
+  font-family: 'Barlow', sans-serif;
+  background-color: #DDDDDD;
+  border-color: none;
+ }
+ ​
+ ​
+ * {
+     box-sizing: border-box;
+ }
+ ​
+ ​
+ a{
+     /* margin: 5px 10px; */
+     text-decoration: none;
+ }
+ ​
+ ​
+ .banner {
+   width: 100%
+ }
+ ​
+ ​
+ main{
+   margin:5px;
+     width: 100%;
+     overflow: hidden;
+     float: left;
+ }
+ main div{
+     width: 47%;
+     margin:20px 10px;
+     padding: 10px;
+     float: left;
+ }
+ main div img{
+   display: inline-block;
+   margin: 0px 20px;
+ }
+ ​
+ main div h2{
+   padding-left: 201px;
+ }
+​
+ main div p {
   text-align: justify;
   font-size: 14px;
-	font-family: 'Barlow',sans-serif;
-	margin-right: 10px;
+  font-family: 'Barlow',sans-serif;
+  margin-right: 10px;
   padding-left: 201px;
-}
-
-.logo {
-  margin-top: 0.2%;
-}
-
-.button {
+ }
+ ​
+ .logo {
+   margin-top: 0.2%;
+   
+ }
+ ​
+ .button {
+   background-color: red;
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   cursor: pointer;
+ }
+ .button:hover {
+   background-color: #E88C3A;
+ }
+ ​
+ ​
+ /*FORMULARIO LOGIN*/
+ .imgcontainer {
+   text-align: center;
+   margin: 24px 0 12px 0;
+ }
+ ​
+ img.avatar {
+   width: 10%;
+   border-radius: 50%;
+  background-color: white;
+ }
+​
+ .formcontainer {
+   padding: 16px;
+   margin: 15px 25%;
+ }
+​
+ div input{
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+ }
+​
+ .formbutton{
   background-color: red;
-  border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-.button:hover {
-  background-color: #E88C3A;
-}
-
-
-/*FORMULARIO LOGIN*/
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 10%;
-  border-radius: 50%;
-	background-color: white;
-
-}
-.formcontainer {
-  padding: 16px;
-	margin: 15px 25%;
-
-}
-div input{
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-}
-.formbutton{
- background-color: red;
- color: white;
- padding: 14px 20px;
- margin: 8px 0;
- border: none;
- cursor: pointer;
- width: 100%;
-}
-
-.alert {
-  width: 100%;
-}
-
-/*PREGUNTAS FRECUENTES*/
-
-.alert {
-  margin-top: 1.2%;
-  background-color: #f5f6fa;
+  padding: 14px 20px;
+  margin: 8px 0;
   border: none;
-
-}
-
-/*FOOTTER*/
-
-section .container {
- margin: 0 auto;
- padding: 30px 0;
- margin-left: 10px;
-}
-
-section div p span {
-	text-align: center;
-  margin-left: 10%;
-  margin-top: 10%;
-}
-
-.site-shopping-info {
-background-color: white;
-margin-top: 36px;
-align-items: center;
-overflow: hidden;
-}
-
-.carrito {
-  width: 2%;
-  margin-right: 5%
-}
-
-.form-inline {
-  margin-right: 10%
-}
-
-div .img-container img {
-	width: 15%;
-	align-items: center;
-	background-color: white;
-	float: left;
-  margin-left: 20%;
-}
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-
-    main div p {
-
-      text-align: justify;
-      width: 100%;
-    	font-family:'Barlow', sans-serif;
-    	margin:5px;
-      padding: 0px;
-      font-size: 16px;
-    }
-      main div h2{
-        text-align: justify;
-        width: 100%;
-      	font-family:'Barlow', sans-serif;
-      	margin:5px;
-        padding: 0px;
-        font-size: 22px;
-      }
-      body div img{
-        width: 30%;
-        margin:5px;
-        padding: 0px;
-      }
+  cursor: pointer;
+  width: 100%;
+ }
+ ​
+ .alert {
+   width: 100%;
+ }
+ ​
+ /*PREGUNTAS FRECUENTES*/
+ ​
+ .alert {
+     margin-top: 1.2%;
+     background-color: #f5f6fa;
+     border: none;
   }
+ ​
+ /*FOOTTER*/
+ ​
+ section .container {
+  margin: 0 auto;
+  padding: 30px 0;
+  margin-left: 10px;
+ }
+ ​
+ section div p span {
+     text-align: center;
+   margin-left: 10%;
+   margin-top: 10%;
+ }
+ ​
+ .site-shopping-info {
+ background-color: white;
+ margin-top: 36px;
+ align-items: center;
+ overflow: hidden;
+ }
+ ​
+ ​
+ .form-inline {
+   margin-right: 10%
+ }
+ ​
+ div .img-container img {
+     width: 15%;
+     align-items: center;
+     background-color: white;
+     float: left;
+   margin-left: 20%;
+ }
+ 
+ ​
+ ​
+ @media(max-width: 768px) {
+   /* For mobile phones: */
+ ​
+     main div p {
+ ​
+       text-align: justify;
+       width: 100%;
+         font-family:'Barlow', sans-serif;
+         margin:5px;
+       padding: 0px;
+       font-size: 16px;
+     }
+       main div h2{
+         text-align: justify;
+         width: 100%;
+           font-family:'Barlow', sans-serif;
+           margin:5px;
+         padding: 0px;
+         font-size: 22px;
+       }
+       body div img{
+         width: 30%;
+         margin:5px;
+         padding: 0px;
+       }
+   }
+
