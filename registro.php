@@ -40,16 +40,8 @@ if(isset($_COOKIE["inputNombre"])){
         $contrasenia = password_hash($_POST["inputPass"],PASSWORD_DEFAULT);
         //echo md5($_POST["password"]);
          } 
-//validacion de mail
-         if(!filter_var($_POST["username"],FILTER_VALIDATE_EMAIL)){//sacar false
-          echo "El mail de usuario no contiene el formato correcto<br>";
-        }
-        //no estar vacio
-        //validacion de contraseña
-        if(strlen($_POST["pass"])<8){
-          echo "La contraseña debe contener mas de 8 caracteres";
-   
-        }
+
+    
 
     if(!$errores){
         //no hay errores
@@ -73,8 +65,8 @@ if(isset($_COOKIE["inputNombre"])){
         //escribo el nuevo json en el archivo .json
         file_put_contents("usuarios.json",$nuevosUsuariosEnJSON);
 
-        header("Location:registroExitoso.php");
-         exit;
+        header("Location:index.php");
+        exit;
             }
 
         }
@@ -99,7 +91,9 @@ if(isset($_COOKIE["inputNombre"])){
 
 <body>
 
-
+      <?php
+        include_once "partesPhp/Header.php"
+      ?>
      <form class="formcontainer" method="POST" enctype="multipart/form-data">
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -144,10 +138,8 @@ if(isset($_COOKIE["inputNombre"])){
       <button type="submit" class="formbutton">Crear Cuenta</button>
     </form>
 
-
-
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <?php
+      include_once "partesPhp/Footer.php"
+    ?>
 </body>
 </html>
