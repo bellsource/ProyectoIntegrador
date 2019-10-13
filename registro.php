@@ -40,8 +40,16 @@ if(isset($_COOKIE["inputNombre"])){
         $contrasenia = password_hash($_POST["inputPass"],PASSWORD_DEFAULT);
         //echo md5($_POST["password"]);
          } 
-
-    
+//validacion de mail
+         if(!filter_var($_POST["username"],FILTER_VALIDATE_EMAIL)){//sacar false
+          echo "El mail de usuario no contiene el formato correcto<br>";
+        }
+        //no estar vacio
+        //validacion de contraseña
+        if(strlen($_POST["pass"])<8){
+          echo "La contraseña debe contener mas de 8 caracteres";
+   
+        }
 
     if(!$errores){
         //no hay errores
@@ -65,8 +73,8 @@ if(isset($_COOKIE["inputNombre"])){
         //escribo el nuevo json en el archivo .json
         file_put_contents("usuarios.json",$nuevosUsuariosEnJSON);
 
-        header("Location:index.php");
-        exit;
+        header("Location:registroExitoso.php");
+         exit;
             }
 
         }
