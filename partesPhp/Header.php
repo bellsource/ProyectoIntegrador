@@ -26,16 +26,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-          <a class="nav-link" href="registro.html">Libros</a>
+          <a class="nav-link" href="registro.php">Libros</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="registro.html">Registro</a>
+          <a class="nav-link" href="registro.php">Registro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="login.html">Login</a>
+          <a class="nav-link disabled" href="login.php">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="preguntasFrecuentes.html">Preguntas Frecuentes</a>
+          <a class="nav-link disabled" href="preguntasFrecuentes.php">Preguntas Frecuentes</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
