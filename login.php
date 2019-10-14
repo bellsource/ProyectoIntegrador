@@ -6,9 +6,9 @@ if(isset($_COOKIE["username"])){
     header("Location:home.php");
 }
 if($_POST){
-    // if($_POST["recordarme"] != null){
-    //     setCookie("username",$_POST["username"]);
-    // }
+    if($_POST["recordarme"] != null){
+         setCookie("username",$_POST["username"]);
+    }
     
       // $hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
       // $resultado = password_verify($_POST["pass"],$hash);
@@ -40,7 +40,7 @@ if($_POST){
    
   }
     
-//  $_SESSION["username"] = $_POST["username"];
+ $_SESSION["username"] = $_POST["username"];
   // header("Location:index.php");   
 }
 
@@ -62,7 +62,7 @@ if($_POST){
   ?>
 
     <form action="login.php" method="POST">
-      <div class="imgcontainer">
+      <div class="imgcontainer-logo">
         <img src="img/logo_usuario.png" alt="Avatar Icon made by Freepik from www.flaticon.com" class="avatar">
       </div>
 

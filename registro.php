@@ -65,7 +65,7 @@ if(isset($_COOKIE["inputNombre"])){
         //escribo el nuevo json en el archivo .json
         file_put_contents("usuarios.json",$nuevosUsuariosEnJSON);
 
-        header("Location:index.php");
+        header("Location:registroExitoso.php");
         exit;
             }
 
@@ -87,6 +87,7 @@ if(isset($_COOKIE["inputNombre"])){
   <title>Registro</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilos.css">
+
 </head>
 
 <body>
