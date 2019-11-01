@@ -1,137 +1,86 @@
-body {
-  font-family: 'Barlow', sans-serif;
-  background-color: #DDDDDD;
-  border-color: none;
- }
- ​
- ​
- * {
-     box-sizing: border-box;
- }
- ​
- ​
- a{
-     /* margin: 5px 10px; */
-     text-decoration: none;
- }
- ​
- ​
- .banner {
-   width: 100%
- }
- ​
- ​
- main{
-   margin:5px;
-     width: 100%;
-     overflow: hidden;
-     float: left;
- }
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color:white;
+}
+/* FORMULARIO */
 
- .logo {
-   margin-top: 0.2%;
+img.avatar {
+  width: 15%;
+  border-radius: 30%;
+ background-color: #5cbbd7;
+}
 
- }
- ​
- .button {
-   background-color: red;
-   border: none;
-   color: white;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   cursor: pointer;
- }
- .button:hover {
-   background-color: #E88C3A;
- }
- ​
- ​
- /*FORMULARIO LOGIN*/
- .imgcontainer-logo {
-   text-align: center;
-   margin: 24px 0 12px 0;
- }
- ​
- img.avatar {
-   width: 10%;
-   border-radius: 50%;
-  background-color: white;
- }
-​
- .formcontainer {
-   padding: 16px;
-   margin: 15px 25%;
- }
-​
- div input{
-     width: 100%;
-     padding: 12px 20px;
-     margin: 8px 0;
-     display: inline-block;
-     border: 1px solid #ccc;
-     box-sizing: border-box;
- }
-​
- .formbutton{
-  background-color: red;
+span.contenedorAvatar{
+  display: block;
+  text-align: center;
+  margin: 50px;
+
+}
+div.contenedorUserYPass{
+  padding: 16px;
+  margin: 0 25%;
+}
+
+div.contenedorUserYPass input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+
+button.botonLogin{
+  background-color:#5f83cf;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
- }
- ​
- .alert {
-   width: 100%;
- }
- ​
- /*PREGUNTAS FRECUENTES*/
+}
 
- ​.faqHeader {
-  font-size: 27px;
-  margin: 20px;
+label.recordarme input{
+ position: absolute;
+ left: 50px;
+ padding-top: 16px;
+}
+div.olvidoPass{
+  position: relative;
+  margin: 0px 25%;
+}
+/* FIN DEL FORMULARIO */
 
+/* HEADER */
+button.btn{
+  background-color:#5f83cf;
+  color:white;
+  border:1px solid #4e6096;
+  cursor: pointer;
+}
+button.btn:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color:#476e9e;
+  border:1px solid #093cd8;
+}
+/* FIN DEL HEADER */
 
+/* FOOTER */
 
-  font-size: 18px;
-  line-height: 22px;
+/* FIN DEL FOOTER */
+
+/* REGISTRO */
+
+/* FIN REGIISTRO */
+
+/* PREGUNTAS FRECUENTES */
+div.container{
+  margin: 50px auto;
 
 }
- /*FOOTTER*/
- ​
- section .container {
-  margin: 0 auto;
-  padding: 30px 0;
-  margin-left: 10px;
- }
- ​
- section div p span {
-     text-align: center;
-   margin-left: 10%;
-   margin-top: 10%;
- }
- ​
- .site-shopping-info {
- background-color: white;
- margin-top: 36px;
- align-items: center;
- overflow: hidden;
- }
- ​
- ​
- .form-inline {
-   margin-right: 10%
- }
- ​
- div .img-container img {
-     width: 15%;
-     align-items: center;
-     background-color: white;
-     float: left;
-   margin-left: 20%;
- }
-
+div.faqHeader{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 40px;
+  line-height: 90px;
+}

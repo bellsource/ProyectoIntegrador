@@ -41,7 +41,7 @@ if($_POST){
   }
     
  $_SESSION["username"] = $_POST["username"];
-  // header("Location:index.php");   
+   
 }
 
 //redirigir
@@ -52,41 +52,41 @@ if($_POST){
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
   </head>
   <body>
   <!-- ACA VIENE EL NAV -->
   <?php
-  include_once "partesPhp/Header.php"
-  ?>
+  include_once "partesPhp/Header.php";
+  ?> 
 
     <form action="login.php" method="POST">
-      <div class="imgcontainer-logo">
-        <img src="img/logo_usuario.png" alt="Avatar Icon made by Freepik from www.flaticon.com" class="avatar">
-      </div>
-
-      <div class="formcontainer">
+      <span class="contenedorAvatar" ><img class="avatar" src="img/logo_usuario.png" alt="Avatar Icon made by Freepik from www.flaticon.com" ></span>
+    
+      <div class="contenedorUserYPass">
         <label for=""><b>Usuario</b></label>
         <input type="email" placeholder="Ingresar email de usuario" name="username" require >
-        <label for=""><b>contraseña</b></label>
+        <label for=""><b>Contraseña</b></label>
         <input type="password" placeholder="Ingresar contraseña" name="pass" require >
-
-        <button class="formbutton"type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="recordame"> Recordame
+        <button class="botonLogin"type="submit">Login</button>
+        <label class="recordarme">
+          <input type="checkbox" checked="checked" name="recordame">Recordame 
         </label>
       </div>
 
-      <div class="formcontainer" style="background-color:#f1f1f1">
-        <span class="psw">¿Olvidó su <a href="#">contraseña?</a></span>
+      <div class="olvidoPass">
+        <span >¿Olvidó su <a href="#">contraseña?</a></span>
       </div>
     </form>
 
-    <footer class="row">
+ <!-- Aca viene el FOOTER -->
        <?php
        include_once "partesPhp/Footer.php"
         ?>  
-    </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+  
 </html>
