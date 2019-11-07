@@ -77,8 +77,8 @@ class BBDD{
     }
     
     public function updateUsuario($id){
-        $consulta= $this-> prepare("UPDATE usuarios SET nombre = $usuario -> getNombre(), apellido = $usuario-> getApellido(), email = $usuario-> getEmail(), pass= $usuario-> getPass(), foto = $usuario-> getFoto(), admin = $usuario-> getAdmin());    
-        $consulta->execute();")
+        $consulta= $this-> prepare("UPDATE usuarios SET nombre = $usuario -> getNombre(), apellido = $usuario-> getApellido(), email = $usuario-> getEmail(), pass= $usuario-> getPass(), foto = $usuario-> getFoto(), admin = $usuario-> getAdmin());")
+        $consulta->execute(); 
     }
 
     public function traerLibros(){
