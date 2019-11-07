@@ -46,6 +46,8 @@ if(isset($_COOKIE["inputNombre"])){
     if(!$errores){
         //no hay errores
 
+        //Aca instanciamos el usuario
+
         //creo el usuario
         $usuario = [
             "id"=> md5($_POST["inputNombre"]),
@@ -53,6 +55,8 @@ if(isset($_COOKIE["inputNombre"])){
             "email" => $_POST["inputEmail"],
             "password" => $contrasenia
         ];
+
+        //Acá llamamos la función insertarUsuario() para ingresa
         
         //traigo los usuarios del json
         $usuariosEnJSON = file_get_contents("usuarios.json");
