@@ -14,7 +14,7 @@ class Usuarios {
         $this->email = $email;
         $this->pass = $pass;
         $this->foto = $foto;
-        $this->admin= $admin
+        $this->admin= $admin;
   }
 
     public function getNombre() {

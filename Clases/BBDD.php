@@ -66,10 +66,20 @@ class BBDD{
     }
 
     public function traerUsuario($id){
-        $consulta = $this->conexion->prepare("SELECT * FROM usuarios");
+        $consulta = $this->conexion->prepare("SELECT * FROM usuarios WHERE $id = usuarios.id");
         $consulta->execute();
         return $consulta->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function insertarUsuario($usuario){
+        $consulta= $this-> prepare("INSERT INTO usuarios (nombre, apellido, email, pass) VALUES ( $usuario-> getNombre(), $usuario-> getApellido(), $usuario-> getEmail(), $usuario-> getPass(), $usuario-> getFoto(), $usuario-> getAdmin())");    
+        $consulta->execute();
+    }
     
+    public function updateUsuario($id){
+        $consulta= $this-> prepare("UPDATE usuarios SET nombre = $usuario -> getNombre(), apellido = $usuario-> getApellido(), email = $usuario-> getEmail(), pass= $usuario-> getPass(), foto = $usuario-> getFoto(), admin = $usuario-> getAdmin());    
+        $consulta->execute();")
+    }
 
     public function traerLibros(){
         $consulta = $this->conexion->query("SELECT * FROM Libros");
