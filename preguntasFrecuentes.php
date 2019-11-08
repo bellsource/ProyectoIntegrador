@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Libros de Coolto</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/estilos.css">
-</head>
 
-<body>
   <!-- ACA VIENE EL NAV -->
   <?php
   include_once "partesPhp/Header.php"
@@ -20,7 +12,7 @@
 
 
 <!-- Bootstrap FAQ - START -->
-<div class="container">
+<div class="container" id="faq">
     <br />
     <div class="panel-group" id="accordion">
         <div class="faqHeader">Preguntas generales</div>
