@@ -46,7 +46,7 @@ class BBDD{
     }
 
     public function  setDb_name($db_name) {
-        return $this->db_name
+        return $this->db_name;
     }
 
     public function getHost() {
@@ -76,9 +76,10 @@ class BBDD{
         $consulta->execute();
     }
     
-    public function updateUsuario($id){
-        $consulta= $this-> prepare("UPDATE usuarios SET nombre = $usuario -> getNombre(), apellido = $usuario-> getApellido(), email = $usuario-> getEmail(), pass= $usuario-> getPass(), foto = $usuario-> getFoto(), admin = $usuario-> getAdmin());")
-        $consulta->execute(); 
+    public function updateUsuario($id,$nom,$ape,$email){
+        $consulta= $this->conexion->query("UPDATE usuarios SET nombre = '$nom', apellido = '$ape', email = '$email' WHERE id = $id");
+        var_dump("UPDATE usuarios SET nombre = $nom, apellido = $ape, email = $email WHERE id = $id");
+        // $consulta->execute(); 
     }
 
     public function traerLibros(){

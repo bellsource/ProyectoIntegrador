@@ -8,12 +8,10 @@ class Usuarios {
     private $foto;
     private $admin;
 
-    public function __construct ($nombre, $mail, $pass, $admin) {
+    public function __construct ($nombre, $email, $pass, $admin) {
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->email = $email;
-        $this->pass = $pass;
-        $this->foto = $foto;
         $this->admin= $admin;
   }
 
