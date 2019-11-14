@@ -6,39 +6,56 @@ if(isset($_COOKIE["username"])){
     header("Location:home.php");
 }
 if($_POST){
-    if($_POST["recordarme"] != null){
-         setCookie("username",$_POST["username"]);
-    }
+    // if($_POST["recordarme"] != null){
+    //      setCookie("username",$_POST["username"]);
+    // }
     
-      // $hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-      // $resultado = password_verify($_POST["pass"],$hash);
-     //valido los datos
-     if(!filter_var($_POST["username"],FILTER_VALIDATE_EMAIL)){//sacar false
-       echo "El mail de usuario no contiene el formato correcto<br>";
-     }
-     //no estar vacio
-     //
-     if(strlen($_POST["pass"])<8){
-       echo "La contraseña debe contener mas de 8 caracteres";
+    //   // $hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+    //   // $resultado = password_verify($_POST["pass"],$hash);
+    //  //valido los datos
+    //  if(!filter_var($_POST["username"],FILTER_VALIDATE_EMAIL)){//sacar false
+    //    echo "El mail de usuario no contiene el formato correcto<br>";
+    //  }
+    //  //no estar vacio
+    //  //
+    //  if(strlen($_POST["pass"])<8){
+    //    echo "La contraseña debe contener mas de 8 caracteres";
 
-     }
+    //  }
     
      
-  //traigo los usuarios del json
-  $usuariosEnJSON = file_get_contents("usuarios.json");
+    require_once 'clases/BBDD.php';
+    require_once 'clases/Usuarios.php';
+    $bd = new BBDD("LibrosDeCoolto");
+    // $traerUsuario = $bd->traerUsuario($_POST["inputEmail"], $_POST["inputPass"]);
 
-  //convierto el json en array
-  $usuarios = json_decode($usuariosEnJSON,true);
+    $errorLogin = $bd->login($_POST["email"],$_POST["pass"]);
+
+    if(empty($errorLogin)){
+      if(($usuario["email"] == $_POST["username"])&&($resultado==TRUE)){
+            header("Location:index.php");
+           }else { 
+             header("Location:login.php");
+           }
+          }
+
+
+  // //traigo los usuarios del json
+  // $usuariosEnJSON = file_get_contents("usuarios.json");
+
+  // //convierto el json en array
+  // $usuarios = json_decode($usuariosEnJSON,true);
       
   //Valido usuario(correo) y contraseña (con hash) con el archivo json
-  foreach($usuarios as $usuario){
-    $resultado = password_verify($_POST["pass"],$usuario["password"]);      
-    if(($usuario["email"] == $_POST["username"])&&($resultado==TRUE)){
-      header("Location:index.php");
-     }else header("Location:login.php");
+  
+  // foreach($usuarios as $usuario){
+  //   $resultado = password_verify($_POST["pass"],$usuario["password"]);      
+  //   if(($usuario["email"] == $_POST["username"])&&($resultado==TRUE)){
+  //     header("Location:index.php");
+  //    }else header("Location:login.php");
      
    
-  }
+  // }
     
  $_SESSION["username"] = $_POST["username"];
    
