@@ -9,8 +9,6 @@ if(isset($_COOKIE["inputNombre"])){
   
   
   
-  
-  
   //inicializo variables para errores
   $errorNombre = "";
   $errorEmail = "";
@@ -49,25 +47,35 @@ if(isset($_COOKIE["inputNombre"])){
         //Aca instanciamos el usuario
 
         //creo el usuario
-        $usuario = [
-            "id"=> md5($_POST["inputNombre"]),
-            "username" => $_POST["inputNombre"],
-            "email" => $_POST["inputEmail"],
-            "password" => $contrasenia
-        ];
+        // $usuario = [
+        //     "id"=> md5($_POST["inputNombre"]),
+        //     "username" => $_POST["inputNombre"],
+        //     "email" => $_POST["inputEmail"],
+        //     "password" => $contrasenia
+        // ];
 
         //Acá llamamos la función insertarUsuario() para ingresa
         
-        //traigo los usuarios del json
-        $usuariosEnJSON = file_get_contents("usuarios.json");
-        //convierto el json en array
-        $usuarios = json_decode($usuariosEnJSON);
-        //agrego el nuevo usuario al array de la base de datos
-        $usuarios[] = $usuario;
-        //convierto el nuevo array completo a json
-        $nuevosUsuariosEnJSON = json_encode($usuarios);
-        //escribo el nuevo json en el archivo .json
-        file_put_contents("usuarios.json",$nuevosUsuariosEnJSON);
+        require_once 'clases/BBDD.php';
+        require_once 'clases/Usuarios.php';
+        $bd = new BBDD("LibrosDeCoolto");
+        $insertarUsuario = $bd->insertarUsuario($_POST["inputNombre"], $_POST["inputApellido"], $_POST["inputEmail"],$_POST["inputPass"]);
+        
+        // if($_POST){ 
+        //$usu = new Usuarios ($_POST["nombre"], $_POST["apellido"], $_POST["email"]);
+        // $updateUsuario = $bd->updateUsuario($_SESSION["id"], $_POST["nombre"], $_POST["apellido"], $_POST["email"]);
+        // }
+
+        // //traigo los usuarios del json
+        // $usuariosEnJSON = file_get_contents("usuarios.json");
+        // //convierto el json en array
+        // $usuarios = json_decode($usuariosEnJSON);
+        // //agrego el nuevo usuario al array de la base de datos
+        // $usuarios[] = $usuario;
+        // //convierto el nuevo array completo a json
+        // $nuevosUsuariosEnJSON = json_encode($usuarios);
+        // //escribo el nuevo json en el archivo .json
+        // file_put_contents("usuarios.json",$nuevosUsuariosEnJSON);
 
         header("Location:registroExitoso.php");
         exit;
