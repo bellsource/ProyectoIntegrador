@@ -103,4 +103,21 @@ class BBDD{
 
     }
 
+    public function login($email,$pass){
+        if($this->estaVacio($email) || $this->estaVacio($pass)){
+            return "Los campos son obligatorios.";
+        }else if(!$this->tieneFormatoEmail($email)){
+            return "El email es inválido.";
+        }
+        return "";
+    }
+
+    public function estaVacio($campo){
+        return $campo == "";
+    }
+    
+    public function tieneFormatoEmail($email){
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+
 }
