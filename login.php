@@ -27,17 +27,12 @@ if($_POST){
     require_once 'clases/BBDD.php';
     require_once 'clases/Usuarios.php';
     $bd = new BBDD("LibrosDeCoolto");
+    $usuario = new Usuarios();
     // $traerUsuario = $bd->traerUsuario($_POST["inputEmail"], $_POST["inputPass"]);
 
-    $errorLogin = $bd->login($_POST["email"],$_POST["pass"]);
+    $errorLogin = $bd->login($_POST["username"],$_POST["pass"]);
 
-    if(empty($errorLogin)){
-      if(($usuario["email"] == $_POST["username"])&&($resultado==TRUE)){
-            header("Location:index.php");
-           }else { 
-             header("Location:login.php");
-           }
-          }
+    
 
 
   // //traigo los usuarios del json

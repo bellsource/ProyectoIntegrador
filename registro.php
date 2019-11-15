@@ -2,21 +2,33 @@
 <?php
 
 session_start();
-if(isset($_COOKIE["inputNombre"])){
-      $_SESSION["inputNombre"] = $_COOKIE["inputNombre"];
+if(isset($_SESSION["inputNombre"])){
+      //$_SESSION["inputNombre"] = $_COOKIE["inputNombre"];
       header("Location:index.php");
   }
   
-  
+  $nombre = '';
+  $apellido = '';
+  $email = '';
+
   
   //inicializo variables para errores
   $errorNombre = "";
+  $errorApellido = "";
   $errorEmail = "";
   $errorPassword = "";
   $errorAvatar = "";
   
   //averiguo si enviaron el formulario
   if($_POST){
+
+    require_once 'clases/BBDD.php';
+    require_once 'clases/Usuarios.php';
+    $bd = new BBDD("LibrosDeCoolto");
+
+    $nombre = $_POST['inputNombre'];
+    $apellido = $_POST['inputApellido'];
+    $email = $_POST['inputEmail'];
     $errores = false;
     
     //valido los datos
@@ -28,6 +40,23 @@ if(isset($_COOKIE["inputNombre"])){
         $errores = true;
     }
     //aca va la validación del apellido
+    if($_POST["inputApellido"] == ""){
+      $errorNombre = "Ingrese un apellido";
+      $errores = true;
+    }else if(strlen($_POST["inputApellido"]) < 2){
+        $errorNombre = "Su apellido debe tener al menos 2 caracteres";
+        $errores = true;
+    }
+    //aca va la validación del email
+    if($_POST["inputEmail"] == ""){
+      $errorNombre = "Este campo no puede estar vacio";
+      $errores = true;
+    }else if(!$bd->tieneFormatoEmail($_POST["inputEmail"])){
+        $errorNombre = "Ingrese un Email.";
+        $errores = true;
+    }
+
+    //validar pass
     if($_POST["inputPass"] == "" || $_POST["inputPassConfirm"] == ""){
         $errorPassword = "No puede estar en blanco";
         $errores = true;
@@ -56,11 +85,12 @@ if(isset($_COOKIE["inputNombre"])){
 
         //Acá llamamos la función insertarUsuario() para ingresa
         
-        require_once 'clases/BBDD.php';
-        require_once 'clases/Usuarios.php';
-        $bd = new BBDD("LibrosDeCoolto");
-        $insertarUsuario = $bd->insertarUsuario($_POST["inputNombre"], $_POST["inputApellido"], $_POST["inputEmail"],$_POST["inputPass"]);
         
+        $usuario = new Usuarios($_POST["inputNombre"], $_POST["inputApellido"], $_POST["inputEmail"],$contrasenia);
+        $insertarUsuario = $bd->insertarUsuario($usuario);
+        var_dump($insertarUsuario);
+        exit;
+
         // if($_POST){ 
         //$usu = new Usuarios ($_POST["nombre"], $_POST["apellido"], $_POST["email"]);
         // $updateUsuario = $bd->updateUsuario($_SESSION["id"], $_POST["nombre"], $_POST["apellido"], $_POST["email"]);
@@ -77,19 +107,18 @@ if(isset($_COOKIE["inputNombre"])){
         // //escribo el nuevo json en el archivo .json
         // file_put_contents("usuarios.json",$nuevosUsuariosEnJSON);
 
-        header("Location:registroExitoso.php");
-        exit;
+        //header("Location:registroExitoso.php");
             }
 
         }
 
-        if($_POST){
-                if($_POST["recordarme"] != null){
-                  setCookie("inputNombre",$_POST["inputNombre"]);
-              }
-              $_SESSION["inputNombre"] = $_POST["inputNombre"];
-              header("Location:index.php");
-            }
+        // if($_POST){
+        //         if($_POST["recordarme"] != null){
+        //           setCookie("inputNombre",$_POST["inputNombre"]);
+        //       }
+        //       $_SESSION["inputNombre"] = $_POST["inputNombre"];
+        //       header("Location:index.php");
+        //     }
  ?>
 <!DOCTYPE html>
 
@@ -112,20 +141,26 @@ if(isset($_COOKIE["inputNombre"])){
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputNombre">Nombre</label>
-          <input type="text" name="inputNombre" class="form-control" id="inputNombre" placeholder="Nombre">
+          <input type="text" name="inputNombre" class="form-control" id="inputNombre" placeholder="Nombre" value='<?= $nombre ?>'>
+          <small><?= $errorNombre ?? '' ?></small>
         </div>
         <div class="form-group col-md-6">
           <label for="inputApellido">Apellido</label>
-          <input type="text" name="inputApellido" class="form-control" id="inputApellido" placeholder="Apellido">
+          <input type="text" value='<?= $apellido ?>' name="inputApellido" class="form-control" id="inputApellido" placeholder="Apellido">
+          <small><?= $errorApellido ?? '' ?></small>
+
         </div>
         <div class="form-group col-md-6">
           <label for="inputEmail">Email</label>
-          <input type="email" name="inputEmail" class="form-control" id="inputEmail" placeholder="Email">
+          <input type="email" name="inputEmail" value='<?= $email ?>' class="form-control" id="inputEmail" placeholder="Email">
+          <small><?= $errorEmail ?? '' ?></small>
+          
         </div>
 
         <div class="form-group col-md-6">
           <label for="inputPass">Contraseña</label>
           <input type="password" name="inputPass" class="form-control" id="inputPass">
+          <small><?= $errorPassword ?? '' ?></small>
         </div>
         <div class="form-group col-md-12">
           <label for="inputPassConfirm">Confirmar Contraseña</label>
